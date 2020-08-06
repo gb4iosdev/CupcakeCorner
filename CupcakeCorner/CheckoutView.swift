@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @ObservedObject var order: Order
+    @ObservedObject var wrappedOrder: OrderWrapper
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
-    //@State private var noWifi = false
+    @State private var noWifi = false
     
     var body: some View {
         GeometryReader { geo in
@@ -23,7 +23,7 @@ struct CheckoutView: View {
                     .scaledToFit()
                         .frame(width: geo.size.width)
                     
-                    Text("Your total is: $\(self.order.cost, specifier: "%.2f")")
+                    Text("Your total is: $\(self.wrappedOrder.order.cost, specifier: "%.2f")")
                         .font(.title)
                     Button("Place order") {
                         self.placeOrder()
@@ -31,18 +31,20 @@ struct CheckoutView: View {
                     .padding()
                 }
             }
+            
         }
         .navigationBarTitle("Check Out", displayMode: .inline)
-        .alert(isPresented: $showingConfirmation) {
-            Alert(title: Text("Thankyou"), message: Text(confirmationMessage), dismissButton: .default(Text("OK")))
-        }
-//        .alert(isPresented: $noWifi) {
-//            Alert(title: Text("No Wifi"), message: Text(confirmationMessage), dismissButton: .default(Text("OK")))
+            //Don't know how to get multiple alerts to work (repositioning to another view didn't work).  Testing is complicated by the fact that I can't simulate broken wifi (see "TestMultipleAlerts" view in this project for proof that this works.
+//        .alert(isPresented: self.$noWifi) {
+//            Alert(title: Text("No Wifi"), message: Text(self.confirmationMessage), dismissButton: .default(Text("OK")))
 //        }
+        .alert(isPresented: self.$showingConfirmation) {
+            Alert(title: Text("Thankyou"), message: Text(self.confirmationMessage), dismissButton: .default(Text("OK")))
+        }
     }
     
     func placeOrder() {
-        guard let encoded = try? JSONEncoder().encode(order) else {
+        guard let encoded = try? JSONEncoder().encode(wrappedOrder.order) else {
             print("Failed to encode order")
             return
         }
@@ -73,6 +75,6 @@ struct CheckoutView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(order: Order())
+        CheckoutView(wrappedOrder: OrderWrapper())
     }
 }

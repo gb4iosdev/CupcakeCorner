@@ -16,6 +16,7 @@
 		8679DFF224D8C484000CE121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8679DFF124D8C484000CE121 /* Assets.xcassets */; };
 		8679DFF524D8C484000CE121 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8679DFF424D8C484000CE121 /* Preview Assets.xcassets */; };
 		8679DFF824D8C484000CE121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8679DFF624D8C484000CE121 /* LaunchScreen.storyboard */; };
+		86B8AE8F24DC1B06000BB99B /* TestMultipleAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AE8E24DC1B06000BB99B /* TestMultipleAlerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8679DFF424D8C484000CE121 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8679DFF724D8C484000CE121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8679DFF924D8C484000CE121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86B8AE8E24DC1B06000BB99B /* TestMultipleAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMultipleAlerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				8679DFEF24D8C480000CE121 /* ContentView.swift */,
 				863CA83524D97DD400081FA6 /* AddressView.swift */,
 				8662774224D9CD20007061EE /* CheckoutView.swift */,
+				86B8AE8E24DC1B06000BB99B /* TestMultipleAlerts.swift */,
 				863CA83324D9786E00081FA6 /* Order.swift */,
 				8679DFF124D8C484000CE121 /* Assets.xcassets */,
 				8679DFF624D8C484000CE121 /* LaunchScreen.storyboard */,
@@ -159,6 +162,7 @@
 				8679DFEE24D8C480000CE121 /* SceneDelegate.swift in Sources */,
 				8662774324D9CD20007061EE /* CheckoutView.swift in Sources */,
 				863CA83424D9786E00081FA6 /* Order.swift in Sources */,
+				86B8AE8F24DC1B06000BB99B /* TestMultipleAlerts.swift in Sources */,
 				8679DFF024D8C480000CE121 /* ContentView.swift in Sources */,
 				863CA83624D97DD400081FA6 /* AddressView.swift in Sources */,
 			);
